@@ -43,3 +43,33 @@ Son muy parecidas a los párametros y argumentos de las funciones en cualquier o
 ## State 
 
 El estado es un objeto en el cual le pondemos definir variables de diferentes tipos(String,enteros, etc..) y lo bamos a poder acceder dentro de nuestro componente en el momento en que se Inicializa.
+
+
+## Instalación y configuración de un entorno
+  
+  1. Crear la carpeta del proyecto
+     `mkdir CurielVideo`
+     `cd CurielVideo`
+  2. Inicializar un repositorio en **GIT**
+     ```bash
+     git init
+     ```
+  3. Inicializar proyecto de **Node.js**;
+    ```bash
+       npm init -y
+    ```
+     > La **-y** indica que se va a preconfigurar el documento package.json
+
+  4. Instalar React
+   ``` bash
+      npm install -save react react-dom
+   ```
+  ### Estructura básica de un proyecto con react
+    - CurielVideo
+      - public
+        index.html 
+      - src
+        - components
+        - index.js
+      - package-lock.js
+      - package-json
