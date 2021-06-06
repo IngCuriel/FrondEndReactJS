@@ -40,3 +40,6 @@ Son muy parecidas a los párametros y argumentos de las funciones en cualquier o
 
 [Documentación](https://platzi.com/clases/1651-react-ejs/22576-que-son-los-metodos-del-ciclo-vida/)
 
+## State 
+
+El estado es un objeto en el cual le pondemos definir variables de diferentes tipos(String,enteros, etc..) y lo bamos a poder acceder dentro de nuestro componente en el momento en que se Inicializa.
