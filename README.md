@@ -58,10 +58,11 @@ El estado es un objeto en el cual le pondemos definir variables de diferentes ti
      ``` bash
      git init
      ```
-  3. Inicializar proyecto de **Node.js**;
-    ``` 
+  3. Inicializar proyecto de **Node.js**
+    ```
        npm init -y
     ```
+    
      > La **-y** indica que se va a preconfigurar el documento package.json
 
   4. Instalar React
@@ -101,4 +102,73 @@ El estado es un objeto en el cual le pondemos definir variables de diferentes ti
     "@babel/preset-react"
   ],
 }
+```
+## Webpack: Empaquetado nuestros módulos
+
+Se encargar de empaquetar nuestro archivos (HTML, CSS, JavaScript , Multimedia) para tenenlos listo para el entorno en producción.
+
+### Instalar y configurar **Webpack**
+
+1. Instalación
+
+```
+npm install webpack webpack-cli html-webpack-plugin html-loader  --save-dev
+```
+2. Configuración
+
+```
+touch webpack.config.js
+```
+Agregar configuracón al webpack.config
+
+```JS
+const path = require('path');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+    entry : './src/index.js',
+    output: {
+        path: path.resolve(__dirname,'dist'),
+        filename: 'bundle.js'
+    },
+    resolve:{
+        extensions: ['.js','.jsx']
+    },
+    module:{
+        rules:[
+            {
+                test:/\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader"
+                }
+            },
+            {
+                test:/\.html$/,
+                use: [
+                    {
+                        loader:'html-loader'
+                    }
+                ]
+            }
+        ]
+    },
+    plugins: [
+      new HtmlWebPackPlugin({
+          template:'./public/index.html',
+          filename: './index.html'
+      })
+    ]
+}
+```
+Se agrega el siguiente script en el archivo package.json
+
+```JSON
+"scripts": {
+     "build" : "webpack --mode production"
+  },
+```
+Compilamos 
+```
+npm run build 
 ```
