@@ -48,14 +48,18 @@ El estado es un objeto en el cual le pondemos definir variables de diferentes ti
 ## Instalación y configuración de un entorno
   
   1. Crear la carpeta del proyecto
-     `mkdir CurielVideo`
-     `cd CurielVideo`
+     ```
+     mkdir CurielVideo
+     ```
+     ```
+     cd CurielVideo
+     ```
   2. Inicializar un repositorio en **GIT**
-     ```bash
+     ``` bash
      git init
      ```
   3. Inicializar proyecto de **Node.js**;
-    ```bash
+    ``` 
        npm init -y
     ```
      > La **-y** indica que se va a preconfigurar el documento package.json
@@ -64,12 +68,37 @@ El estado es un objeto en el cual le pondemos definir variables de diferentes ti
    ``` bash
       npm install -save react react-dom
    ```
-  ### Estructura básica de un proyecto con react
-    - CurielVideo
+### Estructura básica de un proyecto con react
+    CurielVideo
       - public
         index.html 
       - src
         - components
-        - index.js
-      - package-lock.js
-      - package-json
+        index.js
+      package-lock.js
+      package-json
+## Agregando compatibilidad con todos los navegadores usando Babel
+
+### ¿Que es Babel?
+
+  Es uan herramienta muy popular par escribir JAvaScript moderno y transformalo en código que pueda enterder cualquier navegador
+
+1. Instalar Babel
+```
+   npm install --save-dev @babel/core @babel/preset-env @babel/preset-react babel-loader
+```
+2. Crear archivo configuración **Babel**
+
+```
+  touch .babelrc
+```
+3. Agregar configuración en nuestro archivo `.babelrc`
+
+```JS
+{
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ],
+}
+```
