@@ -60,15 +60,14 @@ El estado es un objeto en el cual le pondemos definir variables de diferentes ti
      ```
   3. Inicializar proyecto de **Node.js**
     ```
-       npm init -y
+     npm init -y
     ```
-    
-     > La **-y** indica que se va a preconfigurar el documento package.json
+    La **-y** indica que se va a preconfigurar el documento package.json
 
   4. Instalar React
-   ``` bash
+    ``` bash
       npm install -save react react-dom
-   ```
+    ```
 ### Estructura básica de un proyecto con react
     CurielVideo
       - public
@@ -82,7 +81,7 @@ El estado es un objeto en el cual le pondemos definir variables de diferentes ti
 
 ### ¿Que es Babel?
 
-  Es uan herramienta muy popular par escribir JAvaScript moderno y transformalo en código que pueda enterder cualquier navegador
+  Es una herramienta muy popular para escribir JavaScript moderno y transformalo en código que pueda enterder cualquier navegador.
 
 1. Instalar Babel
 ```
@@ -172,3 +171,20 @@ Compilamos
 ```
 npm run build 
 ```
+## WebPack Dev Server: Reporte de errores y cambios en tipo real
+
+1. Instalar paquete de webpack
+  ```
+    npm install --save-dev webpack-dev-server
+  ```
+
+2. Agregar script en el archivo package.json
+  ```
+  "scripts": {
+     "start": "webpack-dev-server --open --mode development"
+  },
+  ```
+3. Corre en comando
+  ```
+    npm run start
+  ```
